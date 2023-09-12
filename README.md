@@ -1,4 +1,5 @@
 # current_inventory
+<p>https://jj-pocket-dimension.adaptable.app</p>
 <b>Pengimplementasian Checklist:</b><br>
 <p>1. Membuat sebuah proyek Django baru:<br>
 Membuat direktori bernama current_inventory dan membuat repository dengan nama yang sama di Github. Di dalam direktori, saya membuat file 'requirement.txt' dan mengisinya dengan dependencies yang diperlukan.</p>
