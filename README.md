@@ -23,8 +23,7 @@ Buka Adaptable.io, lalu memilih opsi 'create a new app'. Setelah itu, opsi 'conn
  - HTTP Listener on PORT: Centang<br>
 Setelah itu, saya mendeploy aplikasi.</p>
 
-<p><b>BAGAN</b></p>
-![image](https://github.com/jteo0/current_inventory/blob/main/bagan.png?raw=true)
+<p><b>BAGAN</b><br>![image](https://github.com/jteo0/current_inventory/blob/main/bagan.png?raw=true)</p>
 
 <p><b>Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment?</b><br>
 Virtual environment bekerja sebagai suatu lingkungan terisolasi untuk suatu proyek. Sebagai contoh, jika saya memiliki dua proyek berbeda yang menggunakan versi modul python yang berbeda, kedua proyek dapat memiliki virtual environmentnya sendiri supaya keduanya bisa dirun tanpa error. Juga, penginstallan/perubahan modul secara tanpa mengerti secara penuh tentang sistem komputer dapat menyebabkan masalah pada jalannya sistem. Kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual environment (virtual environment hanya lingkungan), tapi secara umum lebih baik tetap digunakan.</p>
