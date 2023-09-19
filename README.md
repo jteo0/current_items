@@ -36,7 +36,7 @@ JSON sering digunakan karena lebih efisien daripada XML.
         {% endblock content %}
    </body>
 </html>```
-<p>4. Buka ```settings.py``` yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris ```TEMPLATES```:<br>
+4. Buka ```settings.py``` yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris ```TEMPLATES```:
 ```
  ...
 TEMPLATES = [
@@ -48,11 +48,11 @@ TEMPLATES = [
     }
 ]
 ...
- ```
- <br>
+```
+ 
 5. Ubah kode di berkas ```main.html``` yang berada di direktori main menjadi kode berikut:<br>
 ```
- {% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block content %}
    <h1>Shopping List Page</h1>
@@ -64,7 +64,6 @@ TEMPLATES = [
    <p>{{class}}</p>
 {% endblock content %}
 ```
-<br>
 6. Buat berkas ```forms.py``` pada direktori main dengan isi kode berikut (ini untuk membuat struktur form):<br>
 ```
 from django.forms import ModelForm
