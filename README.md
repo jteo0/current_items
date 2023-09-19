@@ -80,7 +80,7 @@ class ItemForm(ModelForm):
 from main.forms import ItemForm
 from django.urls import reverse
 from main.models import Item
-```<br>
+```
 8. Buat fungsi baru ```insert_item</i> seperti berikut:<br>
 ```def insert_item(request):
     form = ItemForm(request.POST or None)
@@ -91,9 +91,10 @@ from main.models import Item
 
     context = {'form': form}
     return render(request, "insert_item.html", context)
-```<br>
+```
 9. Ubah fungsi ```show_main``` pada file yang sama menjadi:<br>
-```def show_main(request):
+```
+def show_main(request):
     items = Item.objects.all()
 
     context = {
@@ -103,13 +104,14 @@ from main.models import Item
     }
 
     return render(request, "main.html", context)
-```<br>
+```
 10. Buka ```urls.py``` di direktori main dan import fungsi yang tadi dibuat:<br>
-```from main.views import show_main, insert_item```<br>
+```from main.views import show_main, insert_item```
 11. Tambahkan path berikut ke urlpatterns di file ```urls.py``` yang sama:<br>
-```path('insert_item', insert_item, name='insert_item'),```<br>
+```path('insert_item', insert_item, name='insert_item'),```
 12. Buat berkas HTML baru ```insert_item.html``` pada subdirektori templates di main dengan kode berikut:<br>
-```{% extends 'base.html' %} 
+```
+{% extends 'base.html' %} 
 
 {% block content %}
 <h1>Insert an item</h1>
@@ -128,9 +130,10 @@ from main.models import Item
 </form>
 
 {% endblock %}
-```<br>
+```
 13. Dalam ```main.html``` tambahkan kode berikut yang akan menampilkan data, serta redirect ke form yang menambahkan item:<br>
-```<table>
+```
+<table>
         <tr>
             <th>Name</th>
             <th>Type</th>
@@ -157,9 +160,10 @@ from main.models import Item
             Insert an item
         </button>
     </a>
-```<br>
+```
 14. Pada ```views.py``` di direktori main ditambahkan fungsi tersebut:<br>
-```def show_xml(request):
+```
+def show_xml(request):
     data = Item.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
@@ -174,15 +178,17 @@ def show_xml_by_id(request, id):
 def show_json_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-```<br>
+```
 15. Ubah kode import dari main.views pada ```views.py``` menjadi:<br>
-```from main.views import show_main, insert_item, show_xml, show_json, show_xml_by_id, show_json_by_id```<br>
-16. Tambahkan path url berikut ke urlpatterns:<br>
-```    path('xml/', show_xml, name='show_xml'),
+```
+from main.views import show_main, insert_item, show_xml, show_json, show_xml_by_id, show_json_by_id
+```
+17. Tambahkan path url berikut ke urlpatterns:<br>
+``` path('xml/', show_xml, name='show_xml'),
     path('json/', show_json, name='show_json'),
     path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
     path('json/<int:id>/', show_json_by_id, name='show_json_by_id'), 
-```<br>
+```
 17. Buka postman dan merequest dengan method GET link berikut satu per satu, dan screenshot semuanya (saya ubah [id] menjadi 1):<br>
  - http://localhost:8000/<br>
  - http://localhost:8000/xml<br>
