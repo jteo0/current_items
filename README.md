@@ -14,9 +14,9 @@ JSON sering digunakan karena lebih efisien daripada XML.
  - JSON bersifat human readable dan machine readable. Walaupun sistem lain juga memiliki sifat yang sama, JSON secara umum dianggap salah satu sistem yang lebih mudah lagi untuk dibaca.<br>
  - JSON dapat langsung diparse oleh suatu parser JSON, sedangkan untuk XML, suatu developer harus menulis kode tambahan agar dokumen XML bisa dimengerti (Parser XML hanya memisahkan markup dari data). Ini berarti bahwa JSON secara umum memiliki performance yang lebih baik.<br></p>
 <p><b>Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.</b><br>
-1. Mempersiapkan command prompt dengan ubah path direktori ke current_items dan aktifkan virtual environment dengan memasukkan command ```env\Scripts\activate.bat```.<br>
-2. Buke file ```urls.py``` yang berada di folder current_items dan path 'main/' pada urlpatterns diubah menjadi ''.<br>
-3. Buat folder templates di direktori root dan didalamnya dibuat file ```base.html``` dengan isi kode berikut:<br></p>
+1. Mempersiapkan command prompt dengan ubah path direktori ke current_items dan aktifkan virtual environment dengan memasukkan command <code>env\Scripts\activate.bat</code>.<br>
+2. Buke file <code>urls.py</code> yang berada di folder current_items dan path 'main/' pada urlpatterns diubah menjadi ''.<br>
+3. Buat folder templates di direktori root dan didalamnya dibuat file <code>base.html</code> dengan isi kode berikut:<br></p>
 ```
 {% load static %}
 <!DOCTYPE html>
@@ -76,13 +76,15 @@ class ItemForm(ModelForm):
 ```
 
 7. Tambahkan kode tersebut ke file ```views.py``` yang ada pada direktori main untuk import data yang diperlukan:<br>
-```from django.http import HttpResponseRedirect
+```
+from django.http import HttpResponseRedirect
 from main.forms import ItemForm
 from django.urls import reverse
 from main.models import Item
 ```
-8. Buat fungsi baru ```insert_item</i> seperti berikut:<br>
-```def insert_item(request):
+8. Buat fungsi baru ```insert_item``` seperti berikut:<br>
+```
+def insert_item(request):
     form = ItemForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
