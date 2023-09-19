@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # current_items
 <p><b>Apa perbedaan antara form POST dan form GET dalam Django?</b><br>
 Form POST berfungsi untuk mendapatkan input dari form, mengencode datanya, dan menyerahkannya ke server. Form GET berfungsi untuk mengubah data tersebut menjadi string dan string tersebut dipakai untuk membuat URL dimana data harus diserahkan. Secara dasar, POST digunakan untuk <i>send</i> data, sedangkan GET digunakan untuk mengambil. Beberapa perbedaan lain adalah:</br>
@@ -196,6 +197,9 @@ def show_json_by_id(request, id):
  - JSON by ID<br>![JSON by ID](https://github.com/jteo0/current_inventory/blob/main/tugas3_json.png?raw=true)<br></p>
 
 # current_items (W2)
+=======
+# current_inventory
+>>>>>>> 0ec970783283a098583fe0ed8dcb26ffaf748e8e
 <p>https://jj-pocket-dimension.adaptable.app</p>
 <b>Pengimplementasian Checklist:</b><br>
 <p>1. Membuat sebuah proyek Django baru:<br>
