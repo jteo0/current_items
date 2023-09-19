@@ -39,7 +39,7 @@ JSON sering digunakan karena lebih efisien daripada XML.
 </html>
 ```
 
-4. Buka <code>settings.py></code> yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris <code>TEMPLATES</code>:
+4. Buka <code>settings.py</code> yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris <code>TEMPLATES</code>:
 ```
 ...
 TEMPLATES = [
