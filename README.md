@@ -35,7 +35,8 @@ JSON sering digunakan karena lebih efisien daripada XML.
         {% block content %}
         {% endblock content %}
    </body>
-</html>```
+</html>
+```
 4. Buka ```settings.py``` yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris ```TEMPLATES```:
 ```
  ...
