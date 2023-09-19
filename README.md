@@ -16,7 +16,7 @@ JSON sering digunakan karena lebih efisien daripada XML.
 <p><b>Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.</b><br>
 1. Mempersiapkan command prompt dengan ubah path direktori ke current_items dan aktifkan virtual environment dengan memasukkan command <code>env\Scripts\activate.bat</code>.<br>
 2. Buke file <code>urls.py</code> yang berada di folder current_items dan path 'main/' pada urlpatterns diubah menjadi ''.<br>
-3. Buat folder templates di direktori root dan didalamnya dibuat file <code>base.html</code> dengan isi kode berikut:<br></p>
+3. Buat folder templates di direktori root dan didalamnya dibuat file <code>base.html</code> dengan isi kode berikut:<br>
 ```
 {% load static %}
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ JSON sering digunakan karena lebih efisien daripada XML.
 </html>
 ```
 
-4. Buka <codesettings.py></code> yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris <code>TEMPLATES</code>:
+4. Buka <code>settings.py></code> yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris <code>TEMPLATES</code>:
 ```
 ...
 TEMPLATES = [
