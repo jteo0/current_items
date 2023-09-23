@@ -8,7 +8,7 @@
 
 <p><b>Apakah penggunaan <i>cookies</i> aman secara <i>default</i> dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b></p>
 
-<p><b>Jelaskan bagaimana cara kamu mengimplementasikan <i>checklist</i> di atas secara <i>step-by-step</i></b></p>
+<p><b>Jelaskan bagaimana cara kamu mengimplementasikan <i>checklist</i> di atas secara <i>step-by-step</i>.</b></p>
 
 # current_items (W3)
 <p><b>Apa perbedaan antara form POST dan form GET dalam Django?</b><br>
