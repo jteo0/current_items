@@ -4,11 +4,11 @@
 
 <p><b>Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?</b></p>
 
-<p><b>Apa itu _cookies_ dalam konteks aplikasi web, dan bagaimana Django menggunakan _cookies_ untuk mengelola data sesi pengguna?</b></p>
+<p><b>Apa itu <i>cookies</i> dalam konteks aplikasi web, dan bagaimana Django menggunakan <i>cookies</i> untuk mengelola data sesi pengguna?</b></p>
 
-<p><b>Apakah penggunaan _cookies_ aman secara _default_ dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b></p>
+<p><b>Apakah penggunaan <i>cookies</i> aman secara <i>default</i> dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b></p>
 
-<p><b>Jelaskan bagaimana cara kamu mengimplementasikan _checklist_ di atas secara _step-by-step_</b></p>
+<p><b>Jelaskan bagaimana cara kamu mengimplementasikan <i>checklist</i> di atas secara <i>step-by-step</i></b></p>
 
 # current_items (W3)
 <p><b>Apa perbedaan antara form POST dan form GET dalam Django?</b><br>
