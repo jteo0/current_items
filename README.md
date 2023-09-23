@@ -14,10 +14,12 @@ JSON sering digunakan karena lebih efisien daripada XML.
  - JSON bersifat human readable dan machine readable. Walaupun sistem lain juga memiliki sifat yang sama, JSON secara umum dianggap salah satu sistem yang lebih mudah lagi untuk dibaca.<br>
  - JSON dapat langsung diparse oleh suatu parser JSON, sedangkan untuk XML, suatu developer harus menulis kode tambahan agar dokumen XML bisa dimengerti (Parser XML hanya memisahkan markup dari data). Ini berarti bahwa JSON secara umum memiliki performance yang lebih baik.<br></p>
 <p><b>Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.</b><br>
-1. Mempersiapkan command prompt dengan ubah path direktori ke current_items dan aktifkan virtual environment dengan memasukkan command<code>env\Scripts\activate.bat</code>.<br>
+1. Mempersiapkan command prompt dengan ubah path direktori ke current_items dan aktifkan virtual environment dengan memasukkan command <code>env\Scripts\activate.bat</code>.<br>
 2. Buke file <code>urls.py</code> yang berada di folder current_items dan path 'main/' pada urlpatterns diubah menjadi ''.<br>
-3. Buat folder templates di direktori root dan didalamnya dibuat file <code>base.html</code> dengan isi kode berikut:<br></p>
-<code>{% load static %}
+3. Buat folder templates di direktori root dan didalamnya dibuat file <code>base.html</code> dengan isi kode berikut:<br>
+ 
+```
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,13 +32,16 @@ JSON sering digunakan karena lebih efisien daripada XML.
         {% endblock meta %}
     </head>
 
-    <body>
+   <body>
         {% block content %}
         {% endblock content %}
-    </body>
-</html></code>
-<p>4. Buka <code>settings.py</code> yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris <code>TEMPLATES</code>:<br>
-<code>...
+   </body>
+</html>
+```
+
+4. Buka <code>settings.py</code> yang berada di subdirektori current_items dan tambahkan kode tersebut ke baris <code>TEMPLATES</code>:
+```
+...
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -45,37 +50,44 @@ TEMPLATES = [
         ...
     }
 ]
-...</code><br>
-5. Ubah kode di berkas <code>main.html</code> yang berada di direktori main menjadi kode berikut:<br>
-<code>{% extends 'base.html' %}
+...
+```
+ 
+5. Ubah kode di berkas ```main.html``` yang berada di direktori main menjadi kode berikut:<br>
+```
+{% extends 'base.html' %}
 
 {% block content %}
-    <h1>Shopping List Page</h1>
+   <h1>Shopping List Page</h1>
+    
+   <h5>Name:</h5>
+   <p>{{name}}</p>
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
-
-    <h5>Class:</h5>
-    <p>{{class}}</p>
+   <h5>Class:</h5>
+   <p>{{class}}</p>
 {% endblock content %}
-</code><br>
-6. Buat berkas <code>forms.py</code> pada direktori main dengan isi kode berikut (ini untuk membuat struktur form):<br>
-<code>from django.forms import ModelForm
+```
+6. Buat berkas ```forms.py``` pada direktori main dengan isi kode berikut (ini untuk membuat struktur form):<br>
+```
+from django.forms import ModelForm
 from main.models import Item
 
 class ItemForm(ModelForm):
     class Meta:
         model = Item
         fields = ["name", "amount", "description", "type"]
-</code><br>
-7. Tambahkan kode tersebut ke file <code>views.py</code> yang ada pada direktori main untuk import data yang diperlukan:<br>
-<code>from django.http import HttpResponseRedirect
+```
+
+7. Tambahkan kode tersebut ke file ```views.py``` yang ada pada direktori main untuk import data yang diperlukan:<br>
+```
+from django.http import HttpResponseRedirect
 from main.forms import ItemForm
 from django.urls import reverse
 from main.models import Item
-</code><br>
-8. Buat fungsi baru <code>insert_item</i> seperti berikut:<br>
-<code>def insert_item(request):
+```
+8. Buat fungsi baru ```insert_item``` seperti berikut:<br>
+```
+def insert_item(request):
     form = ItemForm(request.POST or None)
 
     if form.is_valid() and request.method == "POST":
@@ -84,9 +96,10 @@ from main.models import Item
 
     context = {'form': form}
     return render(request, "insert_item.html", context)
-</code><br>
-9. Ubah fungsi <code>show_main</code> pada file yang sama menjadi:<br>
-<code>def show_main(request):
+```
+9. Ubah fungsi ```show_main``` pada file yang sama menjadi:<br>
+```
+def show_main(request):
     items = Item.objects.all()
 
     context = {
@@ -96,13 +109,14 @@ from main.models import Item
     }
 
     return render(request, "main.html", context)
-</code><br>
-10. Buka <code>urls.py</code> di direktori main dan import fungsi yang tadi dibuat:<br>
-<code>from main.views import show_main, insert_item</code><br>
-11. Tambahkan path berikut ke urlpatterns di file <code>urls.py</code> yang sama:<br>
-<code>path('insert_item', insert_item, name='insert_item'),</code><br>
-12. Buat berkas HTML baru <code>insert_item.html</code> pada subdirektori templates di main dengan kode berikut:<br>
-<code>{% extends 'base.html' %} 
+```
+10. Buka ```urls.py``` di direktori main dan import fungsi yang tadi dibuat:<br>
+```from main.views import show_main, insert_item```
+11. Tambahkan path berikut ke urlpatterns di file ```urls.py``` yang sama:<br>
+```path('insert_item', insert_item, name='insert_item'),```
+12. Buat berkas HTML baru ```insert_item.html``` pada subdirektori templates di main dengan kode berikut:<br>
+```
+{% extends 'base.html' %} 
 
 {% block content %}
 <h1>Insert an item</h1>
@@ -121,9 +135,10 @@ from main.models import Item
 </form>
 
 {% endblock %}
-</code><br>
-13. Dalam <code>main.html</code> tambahkan kode berikut yang akan menampilkan data, serta redirect ke form yang menambahkan item:<br>
-<code><table>
+```
+13. Dalam ```main.html``` tambahkan kode berikut yang akan menampilkan data, serta redirect ke form yang menambahkan item:<br>
+```
+<table>
         <tr>
             <th>Name</th>
             <th>Type</th>
@@ -150,9 +165,10 @@ from main.models import Item
             Insert an item
         </button>
     </a>
-</code><br>
-14. Pada <code>views.py</code> di direktori main ditambahkan fungsi tersebut:<br>
-<code>def show_xml(request):
+```
+14. Pada ```views.py``` di direktori main ditambahkan fungsi tersebut:<br>
+```
+def show_xml(request):
     data = Item.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
 
@@ -167,15 +183,17 @@ def show_xml_by_id(request, id):
 def show_json_by_id(request, id):
     data = Item.objects.filter(pk=id)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
-</code><br>
-15. Ubah kode import dari main.views pada <code>views.py</code> menjadi:<br>
-<code>from main.views import show_main, insert_item, show_xml, show_json, show_xml_by_id, show_json_by_id</code><br>
-16. Tambahkan path url berikut ke urlpatterns:<br>
-<code>    path('xml/', show_xml, name='show_xml'),
+```
+15. Ubah kode import dari main.views pada ```views.py``` menjadi:<br>
+```
+from main.views import show_main, insert_item, show_xml, show_json, show_xml_by_id, show_json_by_id
+```
+17. Tambahkan path url berikut ke urlpatterns:<br>
+``` path('xml/', show_xml, name='show_xml'),
     path('json/', show_json, name='show_json'),
     path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
     path('json/<int:id>/', show_json_by_id, name='show_json_by_id'), 
-</code><br>
+```
 17. Buka postman dan merequest dengan method GET link berikut satu per satu, dan screenshot semuanya (saya ubah [id] menjadi 1):<br>
  - http://localhost:8000/<br>
  - http://localhost:8000/xml<br>
