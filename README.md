@@ -1,4 +1,16 @@
-# current_items
+# current_items (W4)
+<p><b>Apa itu Django <code>UserCreationForm</code>, dan jelaskan apa kelebihan dan kekurangannya?</b><br>
+</p>
+
+<p><b>Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?</b></p>
+
+<p><b>Apa itu _cookies_ dalam konteks aplikasi web, dan bagaimana Django menggunakan _cookies_ untuk mengelola data sesi pengguna?</b></p>
+
+<p><b>Apakah penggunaan _cookies_ aman secara _default_ dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b></p>
+
+<p><b>Jelaskan bagaimana cara kamu mengimplementasikan _checklist_ di atas secara _step-by-step_</b></p>
+
+# current_items (W3)
 <p><b>Apa perbedaan antara form POST dan form GET dalam Django?</b><br>
 Form POST berfungsi untuk mendapatkan input dari form, mengencode datanya, dan menyerahkannya ke server. Form GET berfungsi untuk mengubah data tersebut menjadi string dan string tersebut dipakai untuk membuat URL dimana data harus diserahkan. Secara dasar, POST digunakan untuk <i>send</i> data, sedangkan GET digunakan untuk mengambil. Beberapa perbedaan lain adalah:</br>
  - GET bersifat idempotent (setiap request yang identik pasti akan mengeluarkan hasil yang sama). POST tidak bersifat idempotent.<br>
