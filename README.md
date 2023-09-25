@@ -1,8 +1,8 @@
 # current_items (W4)
 <p><b>Apa itu Django <code>UserCreationForm</code>, dan jelaskan apa kelebihan dan kekurangannya?</b><br>
 Django <code>UserCreationForm</code> adalah suatu form yang digunakan untuk membuat user dalam suatu aplikasi. Formnya memiliki tiga field, yaitu username, password1, dan password2 (digunakan untuk konfirmasi password).<br>
-Kelebihan: Proses pembuatan user dipendekkan sehingga developer hanya harus membuat view untuk menampilkan form pembuatan user. <br>
-Kekurangan: Dari Django tidak langsung ada view yang menampilkan pembuatan user, jadi harus dibuat secara manual. Juga, tidak datang dengan email field, jadi jika ingin menambahkan functionality untuk verifikasi email, harus dilakukan sendiri.</p>
+- Kelebihan: Proses pembuatan user dipendekkan sehingga developer hanya harus membuat view untuk menampilkan form pembuatan user. <br>
+- Kekurangan: Dari Django tidak langsung ada view yang menampilkan pembuatan user, jadi harus dibuat secara manual. Juga, tidak datang dengan email field, jadi jika ingin menambahkan functionality untuk verifikasi email, harus dilakukan sendiri.</p>
 
 <p><b>Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?</b></p>
 
