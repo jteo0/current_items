@@ -1,18 +1,51 @@
 # current_items (W4)
 <p><b>Apa itu Django <code>UserCreationForm</code>, dan jelaskan apa kelebihan dan kekurangannya?</b><br>
 Django <code>UserCreationForm</code> adalah suatu form yang digunakan untuk membuat user dalam suatu aplikasi. Formnya memiliki tiga field, yaitu username, password1, dan password2 (digunakan untuk konfirmasi password).<br>
-- Kelebihan: Proses pembuatan user dipendekkan sehingga developer hanya harus membuat view untuk menampilkan form pembuatan user. <br>
-- Kekurangan: Dari Django tidak langsung ada view yang menampilkan pembuatan user, jadi harus dibuat secara manual. Juga, tidak datang dengan email field, jadi jika ingin menambahkan functionality untuk verifikasi email, harus dilakukan sendiri.</p>
+- Kelebihan: Proses pembuatan user dipendekkan sehingga developer hanya harus membuat view untuk menampilkan form pembuatan user.<br>
+- Kekurangan: Dari Django tidak langsung ada view yang menampilkan pembuatan user, jadi harus dibuat secara manual. Juga, tidak datang dengan email field, jadi jika ingin menambahkan functionality untuk verifikasi email, harus dilakukan sendiri. Secara umum, fitur lain harus ditambahkan secara manual.</p>
 
-<p><b>Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?</b>
+<p><b>Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?</b><br>
 Secara singkat, autentikasi adalah proses yang verifikasi suatu user yang pastikan bahwa user yang sedang menggunakan aplikasi beneran merupakan user itu, sedangkan otorisasi merujuk pada apa yang user itu boleh lakukan. Keduanya penting karena keberadaan data yang tidak kita ingin diubah/dilihat oleh user. Otorisasi membuatnya supaya mereka tidak dapat mengakses data tersebut dan autentikasi membuatnya supaya seorang user tidak bisa <i>circumvent</i> otorisasi dengan mengubah diri menjadi user yang memiliki akses.</p>
 
-<p><b>Apa itu <i>cookies</i> dalam konteks aplikasi web, dan bagaimana Django menggunakan <i>cookies</i> untuk mengelola data sesi pengguna?</b>
+<p><b>Apa itu <i>cookies</i> dalam konteks aplikasi web, dan bagaimana Django menggunakan <i>cookies</i> untuk mengelola data sesi pengguna?</b><br>
+Cookies adalah file kecil yang didalamya berisi data yang digunakan untuk identifikasi suatu komputer. Suatu server/network membuat dan mengirim cookie, dan cookie disebut digunakan sebagai ID untuk komputer. Ini juga membuatnya supaya network dapat mengetahui user tanpa melakukan autorisasi secara berulang (selama ada cookie). Django menggunakan cookies untuk menyimpan suatu <i>value</i> dan menyimpan session ID (bukan ID untuk user) untuk waktu yang telah ditetapkan.</p>
+
+<p><b>Apakah penggunaan <i>cookies</i> aman secara <i>default</i> dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b><br>
+Secara umum, cookies aman untuk digunakan secara pengembangan web, tapi semua hal ada risikonya. Untuk cookies, bisa terjadi suatu cookie tidak secure akibat dari masalah dari website, atau ada hacker yang menyelipkan software problematic yang terlihat sebagai cookie.</p>
+
+<p><b>Jelaskan bagaimana cara kamu mengimplementasikan <i>checklist</i> di atas secara <i>step-by-step</i>.</b><br>
+1. Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.<br>
+Saya mengimport Django UserCreationForm, redirect, messages, authenticate, login, dan logout ke views.py yang di subdirektori main, serta membuat fungsi register, login_user, dan logout_user. Setelah itu, saya membuat berkas register.html dan login.html di templates di main dan menambahkan path masing-masing fungsi ke ke urls.py.</p>
+
+<p>2. Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.<br>
+Menjalankan <code>python manage.py runserver</code> dan membuka http://localhost:8000/ melalui firefox (virtual environment sudah nyala dan command prompt sudah berada di direktori). Saat page login muncul, saya registrasi dan login dengan data yang telah diinput, serta mengisi form untuk membuat item. Ini diulang sekali lagi sehungga ada dua akun pengguna.</p>
+
+<p>3. Menghubungkan model Item dengan User.<br>
+Buka models.py, import User, dan menambahkan kode tersebut ke dalam model Item:
+ 
+```
+ user = models.ForeignKey(User, on_delete=models.CASCADE)
+```
+<br>Setelah itu, didalam views.py, fungsi insert_item diubah menjadi berikut:
+```
+form = ProductForm(request.POST or None)
+
+ if form.is_valid() and request.method == "POST":
+     product = form.save(commit=False)
+     product.user = request.user
+     product.save()
+     return HttpResponseRedirect(reverse('main:show_main'))
+
+ ...
+```
 </p>
-
-<p><b>Apakah penggunaan <i>cookies</i> aman secara <i>default</i> dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b></p>
-
-<p><b>Jelaskan bagaimana cara kamu mengimplementasikan <i>checklist</i> di atas secara <i>step-by-step</i>.</b></p>
+<p>4. Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.<br>
+Buka views.py dan mengimport datetime, lalu menambahkan request cookie datetime now untuk fungsi <code>login_user</code>. Dalam show_main ditambahkan objek last_login untuk mengakses cookie yang baru ditambahkan, dan di main.html disisipkan <code>{{ last_login }}</code> agar muncul di tampilan website. Untuk menampilkan username, di views.py, pada bagian context, bagian name diubah menjadi kode berikut:
+ 
+```
+'name': request.user.username,
+```
+</p>
 
 # current_items (W3)
 <p><b>Apa perbedaan antara form POST dan form GET dalam Django?</b><br>
@@ -205,7 +238,8 @@ def show_json_by_id(request, id):
 from main.views import show_main, insert_item, show_xml, show_json, show_xml_by_id, show_json_by_id
 ```
 17. Tambahkan path url berikut ke urlpatterns:<br>
-``` path('xml/', show_xml, name='show_xml'),
+```
+    path('xml/', show_xml, name='show_xml'),
     path('json/', show_json, name='show_json'),
     path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),
     path('json/<int:id>/', show_json_by_id, name='show_json_by_id'), 
