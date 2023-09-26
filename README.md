@@ -5,9 +5,10 @@ Django <code>UserCreationForm</code> adalah suatu form yang digunakan untuk memb
 - Kekurangan: Dari Django tidak langsung ada view yang menampilkan pembuatan user, jadi harus dibuat secara manual. Juga, tidak datang dengan email field, jadi jika ingin menambahkan functionality untuk verifikasi email, harus dilakukan sendiri.</p>
 
 <p><b>Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?</b>
-Secara singkat, autentikasi adalah proses yang verifikasi suatu user yang pastikan bahwa user yang sedang menggunakan aplikasi beneran merupakan user itu, sedangkan otorisasi merujuk pada apa yang user itu boleh lakukan. Keduanya penting karena</p>
+Secara singkat, autentikasi adalah proses yang verifikasi suatu user yang pastikan bahwa user yang sedang menggunakan aplikasi beneran merupakan user itu, sedangkan otorisasi merujuk pada apa yang user itu boleh lakukan. Keduanya penting karena keberadaan data yang tidak kita ingin diubah/dilihat oleh user. Otorisasi membuatnya supaya mereka tidak dapat mengakses data tersebut dan autentikasi membuatnya supaya seorang user tidak bisa <i>circumvent</i> otorisasi dengan mengubah diri menjadi user yang memiliki akses.</p>
 
-<p><b>Apa itu <i>cookies</i> dalam konteks aplikasi web, dan bagaimana Django menggunakan <i>cookies</i> untuk mengelola data sesi pengguna?</b></p>
+<p><b>Apa itu <i>cookies</i> dalam konteks aplikasi web, dan bagaimana Django menggunakan <i>cookies</i> untuk mengelola data sesi pengguna?</b>
+</p>
 
 <p><b>Apakah penggunaan <i>cookies</i> aman secara <i>default</i> dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?</b></p>
 
