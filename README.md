@@ -7,12 +7,35 @@
  - Attribute Selector adalah selector yang memilih elemen berdasarkan suatu atribut spesifik/value dari atribut. Ini berguna untuk memilih elemen yang memliki atribut/sifat yang spesifik.</p>
 
 <p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br>
-  - ```<a>```<br>
-  - </p>
+  - <pre><a></pre><br>
+  - <pre><b></pre><br>
+  - <pre><body></pre><br>
+  - <pre><br></pre><br>
+  - <pre><button></pre><br>
+  - <pre><code></pre><br>
+  - <pre><div></pre><br>
+  - <pre><em></pre><br>
+  - <pre><footer></pre><br>
+  - <pre><form></pre><br>
+  - <pre><h1> sampai <h6></pre><br>
+  - <pre><i></pre><br>
+  - <pre><input></pre><br>
+  - <pre><label></pre><br>
+  - <pre><p></pre><br>
+  - <pre><pre></pre><br>
+  - <pre><sript></pre><br>
+  - <pre><style></pre><br>
+  - <pre><table></pre><br>
+  - <pre><td></pre><br>
+  - <pre><th></pre><br>
+  - <pre><tr></pre><br>
+  - <pre><u></pre><br></p>
+  
+<p><b>Jelaskan perbedaan antara <i>margin</i> dan <i>padding.</i></b><br>
+Margin merupakan daerah (space yang disisihkan) disekitar element, sedangkan padding merupakan daerah didalam elemen. Sebagai contoh, jika ada suatu button kotak yang didalamnya ada teks "TEXT", margin merupakan spasi diantara button dan elemen diluar button, sedangkan padding merupakan spasi diantara teks dan border button.</p>
 
-<p><b>Jelaskan perbedaan antara <i>margin</i> dan <i>padding.</i></b><br></p>
-
-<p><b>Jelaskan perbedaan antara <i>framework</i> CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?</b></p>
+<p><b>Jelaskan perbedaan antara <i>framework</i> CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?</b><br>
+</p>
 
 # current_items (W4)
 <p><b>Apa itu Django <code>UserCreationForm</code>, dan jelaskan apa kelebihan dan kekurangannya?</b><br>
