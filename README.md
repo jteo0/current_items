@@ -1,3 +1,13 @@
+# current_items (W5)
+<p><b>Jelaskan manfaat dari setiap <i>element selector</i> dan kapan waktu yang tepat untuk menggunakannya.</b><br>
+ - </p>
+
+<p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br></p>
+
+<p><b>Jelaskan perbedaan antara <i>margin</i> dan <i>padding.</i></b><br></p>
+
+<p><b>Jelaskan perbedaan antara <i>framework</i> CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?</b></p>
+
 # current_items (W4)
 <p><b>Apa itu Django <code>UserCreationForm</code>, dan jelaskan apa kelebihan dan kekurangannya?</b><br>
 Django <code>UserCreationForm</code> adalah suatu form yang digunakan untuk membuat user dalam suatu aplikasi. Formnya memiliki tiga field, yaitu username, password1, dan password2 (digunakan untuk konfirmasi password).<br>
