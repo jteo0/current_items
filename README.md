@@ -1,12 +1,13 @@
 # current_items (W5)
 <p><b>Jelaskan manfaat dari setiap <i>element selector</i> dan kapan waktu yang tepat untuk menggunakannya.</b><br>
- - Simple Selector merupakan selector yang memilih elemen berdasarkan tag, nama atau id. Ini berguna saat ada formatting yang ingin dilakukan hanya untuk elemen dengan salah satu dari atribut spesifik itu. Sebagai contoh, semua label dengan id="green" diberi warna hijau.<br>
+ - Simple Selector merupakan selector yang memilih elemen berdasarkan tag, nama atau id. Ini berguna saat ada formatting yang ingin dilakukan hanya untuk elemen dengan salah satu dari tag/nama/id spesifik itu. Sebagai contoh, semua label dengan id="green" diberi warna hijau.<br>
  - Combinator Selector adalah selector yang memilih elemen berdasarkan hubungan diantaranya/relasinya, seperti elemen yang merupakan child dari elemen lain. Selector ini berguna untuk memilih elemen yang memiliki relasi yang sama, namun tidak memiliki tag/nama/id yang sama. Sebagai contoh, semua elemen yang muncul persis setelah elemen yang lain selallu berada pada align center.<br>
- - Pseudo-class Selectors adalah suat selector<br>
- - Pseudo-element Selectors<br>
- - Attribute Selector</p>
+ - Pseudo-class Selectors adalah suatu selector yang memilih elemen berdasarkan special-state/kondisi suatu elemen, sebagai contoh lagi di klik/di hover. Ini berguna untuk elemen yang memiliki special-state yang sama, supaya kodingan tidak harus ditulis secara berulangan.<br>
+ - Pseudo-element Selectors adalah suatu selector yang memilih bagian dari tertentu dari suatu elemen, sebagai contoh huruf pertama dari suatu teks. Ini berguna untuk formatting elemen yang besar, atau bagian spesifik dari suatu elemen.<br>
+ - Attribute Selector adalah selector yang memilih elemen berdasarkan suatu atribut spesifik/value dari atribut. Ini berguna untuk memilih elemen yang memliki atribut/sifat yang spesifik.</p>
 
-<p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br></p>
+<p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br>
+ - </p>
 
 <p><b>Jelaskan perbedaan antara <i>margin</i> dan <i>padding.</i></b><br></p>
 
