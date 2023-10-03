@@ -1,6 +1,6 @@
 # current_items (W5)
 <p><b>Jelaskan manfaat dari setiap <i>element selector</i> dan kapan waktu yang tepat untuk menggunakannya.</b><br>
- - Element Selector merupakan selector yang memilih elemen HTML berdasarkan nama elemen. Sebagai contoh, p untuk semua elemen '<p>'.<br>
+ - Element Selector merupakan selector yang memilih elemen HTML berdasarkan nama elemen. Sebagai contoh, p untuk semua elemen '< p >'.<br>
  - ID Selector memlih elemen dengan id spesifik.<br>
  - Class Selector memilih semua elemen dengan suatu atribut class tertentu.<br>
  - Universal Selector memilih semua elemen HTML di suatu page.<br>
