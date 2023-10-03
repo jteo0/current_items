@@ -7,9 +7,10 @@
  - Attribute Selector adalah selector yang memilih elemen berdasarkan suatu atribut spesifik/value dari atribut. Ini berguna untuk memilih elemen yang memliki atribut/sifat yang spesifik.</p>
 
 <p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br>
-  - <pre>
+  - 
+  <pre>
    <a> 
-   </pre><br>
+  </pre><br>
   - <pre><b></pre><br>
   - <pre><body></pre><br>
   - <pre><br></pre><br>
