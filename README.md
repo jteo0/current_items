@@ -1,10 +1,10 @@
 # current_items (W5)
 <p><b>Jelaskan manfaat dari setiap <i>element selector</i> dan kapan waktu yang tepat untuk menggunakannya.</b><br>
- - Element Selector merupakan selector yang memilih elemen HTML berdasarkan nama elemen. Sebagai contoh, p untuk semua elemen '< p >'.<br>
- - ID Selector memlih elemen dengan id spesifik.<br>
- - Class Selector memilih semua elemen dengan suatu atribut class tertentu.<br>
- - Universal Selector memilih semua elemen HTML di suatu page.<br>
- - Grouping Selector memilih semua elemen HTML yang memiliki <i>style definition</i> yang sama. Secara umum, ini digunakan untuk mengurangi koding yang harus dilakukan.</p>
+ - Simple Selector merupakan selector yang memilih elemen berdasarkan tag, nama atau id. Ini berguna saat ada formatting yang ingin dilakukan hanya untuk elemen dengan salah satu dari atribut spesifik itu. Sebagai contoh, semua label dengan id="green" diberi warna hijau.<br>
+ - Combinator Selector adalah selector yang memilih elemen berdasarkan hubungan diantaranya/relasinya, seperti elemen yang merupakan child dari elemen lain. Selector ini berguna untuk memilih elemen yang memiliki relasi yang sama, namun tidak memiliki tag/nama/id yang sama. Sebagai contoh, semua elemen yang muncul persis setelah elemen yang lain selallu berada pada align center.<br>
+ - Pseudo-class Selectors adalah suat selector<br>
+ - Pseudo-element Selectors<br>
+ - Attribute Selector</p>
 
 <p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br></p>
 
