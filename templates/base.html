@@ -8,10 +8,54 @@
             content="width=device-width, initial-scale=1.0"
         />
         {% block meta %}
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1">
         {% endblock meta %}
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+J4jsl5c9zdLKaUk5Ae5f5b1bw6AUn5f5v8FZJoMxm6f5cH1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <style>
+            .accordion-header {
+                background-color: #404E7C;
+                color: #eef0f7;
+                cursor: pointer;
+                padding: 15px;
+                width: 700px;
+                border: 2px solid #FFFFFF ;
+                text-align: left;
+                outline: none;
+                font-size: 17px;
+                transition: 0.4s;
+                position: relative;
+                right: auto;
+                left: 54%;
+                font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+              }
+              
+              .active, .accordion-header:hover {
+                background-color: #546496;
+              }
+              
+              .panel {
+                padding: 0 18px;
+                background-color: white;
+                border: 2px solid #260F26 ;
+                max-height: 0;
+                width: 700px;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                position: relative;
+                right: auto;
+                left: 54%;
+                margin-left: 10px;
+              }
+              
+        </style>
     </head>
 
-    <body>
+    <body style="background-color:#251F47;">
+        
         {% block content %}
         {% endblock content %}
     </body>

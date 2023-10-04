@@ -1,7 +1,10 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+
+{% load static %}
 
 {% block content %}
-<h1 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Insert an item</h1>
+
+<h1 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Edit Item</h1>
 
 <form method="POST">
     {% csrf_token %}
@@ -10,7 +13,7 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Add Item"/>
+                <input type="submit" value="Edit Item"/>
             </td>
         </tr>
     </table>

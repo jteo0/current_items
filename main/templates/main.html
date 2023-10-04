@@ -1,48 +1,70 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Pocket Dimension</h1>
+    <h1 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:70px;position:fixed; left:9%; right:auto; top
+    : 25%; bottom: auto;">Pocket Dimension</h1>
 
-    <h5>Name:</h5>
-    <p>{{name}}</p>
+    <h5 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:30px;
+    position:fixed; left:23%; right:auto; top: 40%; bottom: auto;">Name:</h5>
+    <p style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:30px;
+    position:fixed; left:23%; right:auto; top: 45%; bottom: auto;">{{name}}</p>
 
-    <h5>Class:</h5>
-    <p>{{class}}</p>
-
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Description</th>
-            <th>Amount</th>
-        </tr>
+    <h5 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:30px;
+    position:fixed; left:23%; right:auto; top: 53%; bottom: auto;">Class:</h5>
+    <p style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:30px;
+    position:fixed; left:23%; right:auto; top: 57%; bottom: auto;">{{class}}</p>
     
         {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-    
+        <div id="accordion-container">
         {% for item in items %}
-            <tr>
-                <td>{{item.name}}</td>
-                <td>{{item.type}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.amount}}</td>
-            </tr>
+            <button class="accordion-header">{{item.name}}</button>
+                <div class="panel">
+                    <p><b>Type: {{item.type}}</b></p><p>{{item.description}}</p><p>Amount: {{item.amount}}<p>
+                        <a href="{% url 'main:edit_item' item.pk %}">
+                            <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
+                                Edit
+                            </button>
+                        </a>
+                        <a href="{% url 'main:delete_item' item.pk %}">
+                            <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
+                                Delete
+                            </button>
+                        </a>
+                    
+                    </div>
+                    <script>
+                    const accordianContainer = document.getElementById('accordion-container');
+                    accordianContainer.addEventListener("click", function(event) {
+                        const target = event.target;
+                        if (target && target.classList.contains('accordion-header')) {
+                            const panel = target.nextElementSibling;
+                            target.classList.toggle("active");
+                            if (panel.style.maxHeight) {
+                              panel.style.maxHeight = null;
+                            } else {
+                              panel.style.maxHeight = panel.scrollHeight + "px";
+                            }
+                          }
+                        });
+                    </script>
+
         {% endfor %}
-    </table>
+        </div>
     
     <br />
     
     <a href="{% url 'main:insert_item' %}">
-        <button>
+        <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px;position:fixed;left:21.5%; right:auto; top: 67%; bottom: auto;">
             Insert an item
         </button>
     </a>
 
     <a href="{% url 'main:logout' %}">
-        <button>
+        <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px;position:fixed;left:0%; right:auto; top: auto; bottom: 6%;">
             Logout
         </button>
     </a>
     
-    <h5>Sesi terakhir login: {{ last_login }}</h5>
-    
+    <h5 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px;position:fixed;left:0%; right:auto; top: auto; bottom: 0%;">Sesi terakhir login: {{ last_login }}</h5>
+
 {% endblock content %}

@@ -8,18 +8,18 @@
 
 <div class = "login">
 
-    <h1>Login</h1>
+    <h1 style="color:#F5F5F5;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:50px;">Login</h1>
 
     <form method="POST" action="">
         {% csrf_token %}
         <table>
             <tr>
-                <td>Username: </td>
+                <td style="color:#F5F5F5;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px;">Username: </td>
                 <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
             </tr>
                     
             <tr>
-                <td>Password: </td>
+                <td style="color:#F5F5F5;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px">Password: </td>
                 <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
             </tr>
 
@@ -38,7 +38,7 @@
         </ul>
     {% endif %}     
         
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
+    <p style="color:#F5F5F5;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Don't have an account yet?<a href="{% url 'main:register' %}">    Register Now</a></p>
 
 </div>
 
