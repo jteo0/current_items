@@ -28,7 +28,7 @@
   - &lt;th&gt;, mendefinisikan cell header pada tabel<br>
   - &lt;tr&gt;, mendefinisikan baris cell dari suatu tabel<br>
   - &lt;title&gt; mendefinisikan judul dari suatu dokumen<br>
-  - &lt;u&gt;, untuk <u>underline</u> suatu teks</p>
+  - &lt;u&gt;, untuk <u>underline/menggaris bawah</u> suatu teks</p>
   
 <p><b>Jelaskan perbedaan antara <i>margin</i> dan <i>padding.</i></b><br>
 Margin merupakan daerah (space yang disisihkan) disekitar element, sedangkan padding merupakan daerah didalam elemen. Sebagai contoh, jika ada suatu button kotak yang didalamnya ada teks "TEXT", margin merupakan spasi diantara button dan elemen diluar button, sedangkan padding merupakan spasi diantara teks dan border button.</p>
