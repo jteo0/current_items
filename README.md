@@ -7,32 +7,28 @@
  - Attribute Selector adalah selector yang memilih elemen berdasarkan suatu atribut spesifik/value dari atribut. Ini berguna untuk memilih elemen yang memliki atribut/sifat yang spesifik.</p>
 
 <p><b>Jelaskan HTML5 Tag yang kamu ketahui.</b><br>
-  - 
-  <pre>
-   <a> 
-  </pre><br>
-  - <pre><b></pre><br>
-  - <pre><body></pre><br>
-  - <pre><br></pre><br>
-  - <pre><button></pre><br>
-  - <pre><code></pre><br>
-  - <pre><div></pre><br>
-  - <pre><em></pre><br>
-  - <pre><footer></pre><br>
-  - <pre><form></pre><br>
-  - <pre><h1> sampai <h6></pre><br>
-  - <pre><i></pre><br>
-  - <pre><input></pre><br>
-  - <pre><label></pre><br>
-  - <pre><p></pre><br>
-  - <pre><pre></pre><br>
-  - <pre><sript></pre><br>
-  - <pre><style></pre><br>
-  - <pre><table></pre><br>
-  - <pre><td></pre><br>
-  - <pre><th></pre><br>
-  - <pre><tr></pre><br>
-  - <pre><u></pre><br></p>
+  - &lt;a&gt;, untuk membuat hyperlink<br>
+  - &lt;b&gt;, untuk membuat <b>bold</b> suatu teks<br>
+  - &lt;body&gt;, define body dari suatu dokumen HTML<br>
+  - &lt;br&gt;, untuk membuat line break<br>
+  - &lt;button&gt;, membuat elemen button yang bisa dipencet<br>
+  - &lt;code&gt;, teks yang didalam daerah ini merupakan code<br>
+  - &lt;div&gt;, menspesifikasikan suatu bagian dari dokumen<br>
+  - &lt;em&gt;, digunakan untuk memberi emphasis ke suatu teks (secara semantik). Biasanya terender sebagai italic.<br>
+  - &lt;form&gt;, mendefinisikan suatu form HTML untuk mendapatkan input user<br>
+  - &lt;h1&gt;, h1 sampai denga h6 mendefinisikan header HTML<br>
+  - &lt;i&gt;, untuk membuat suatu teks <i>italic</i>. Berbeda dengan em secara semantik, dimana italic biasanya digunakan untuk style<br>
+  - &lt;input&gt;, mendefinisikan pengontrol input<br>
+  - &lt;label&gt;, membuat suatu label<br>
+  - &lt;p&gt;, mendefinisikan suatu paragraf<br>
+  - &lt;script&gt;, tempat memasukan code yang dijalankan<br>
+  - &lt;style&gt;, untuk memasukan style (formatting/sifat) ke dalam suatu dokumen. Biasaya CSS<br>
+  - &lt;table&gt;, mendefinisikan suatu tabel data<br>
+  - &lt;td&gt;, mendefinisikan cell didalam tabel<br>
+  - &lt;th&gt;, mendefinisikan cell header pada tabel<br>
+  - &lt;tr&gt;, mendefinisikan baris cell dari suatu tabel<br>
+  - &lt;title&gt; mendefinisikan judul dari suatu dokumen<br>
+  - &lt;u&gt;, untuk <u>underline</u> suatu teks</p>
   
 <p><b>Jelaskan perbedaan antara <i>margin</i> dan <i>padding.</i></b><br>
 Margin merupakan daerah (space yang disisihkan) disekitar element, sedangkan padding merupakan daerah didalam elemen. Sebagai contoh, jika ada suatu button kotak yang didalamnya ada teks "TEXT", margin merupakan spasi diantara button dan elemen diluar button, sedangkan padding merupakan spasi diantara teks dan border button.</p>
