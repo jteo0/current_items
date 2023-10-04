@@ -34,7 +34,7 @@
 Margin merupakan daerah (space yang disisihkan) disekitar element, sedangkan padding merupakan daerah didalam elemen. Sebagai contoh, jika ada suatu button kotak yang didalamnya ada teks "TEXT", margin merupakan spasi diantara button dan elemen diluar button, sedangkan padding merupakan spasi diantara teks dan border button.</p>
 
 <p><b>Jelaskan perbedaan antara <i>framework</i> CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?</b><br>
-</p>
+Bootstrap merupakan suatu UI kit yang datang dengan komponen secara langsung, sedangkan Tailwind hanya memberikan utility class dan widget. Karena sudah ada komponen yang <i>built-in</i>, cenderungan banyak website yang menggunakan Bootstrap terlihat generic. Secara umum, jika kita ingin memprioritaskan desain dan kustomisasi full dalam development website, sebaiknya menggunakan Tailwind. Jika kita lebih memprioritaskan suatu framework yang kurang <i>time-consuming</i> dan sudah mengcover banyak hal ang diperlukan dalam web design, sebaiknya menggunakan Bootstrap.</p>
 
 # current_items (W4)
 <p><b>Apa itu Django <code>UserCreationForm</code>, dan jelaskan apa kelebihan dan kekurangannya?</b><br>
