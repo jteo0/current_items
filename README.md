@@ -1,3 +1,13 @@
+# current_items (W6)
+<p><b>Jelaskan perbedaan antara <i>asynchronous programming</i> dengan <i>synchronous programming</i>.</b><br>
+</p>
+<p><b>Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma <i>event-driven programming</i>. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.</b><br></p>
+<p><b>Jelaskan penerapan <i>asynchronous programming</i> pada AJAX.</b><br>
+</p>
+<p><b>Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.</b><br>
+</p>
+<p><b>Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).</b><br></p>
+
 # current_items (W5)
 <p><b>Jelaskan manfaat dari setiap <i>element selector</i> dan kapan waktu yang tepat untuk menggunakannya.</b><br>
  - Simple Selector merupakan selector yang memilih elemen berdasarkan tag, nama atau id. Ini berguna saat ada formatting yang ingin dilakukan hanya untuk elemen dengan salah satu dari tag/nama/id spesifik itu. Sebagai contoh, semua label dengan id="green" diberi warna hijau.<br>
