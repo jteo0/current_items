@@ -1,8 +1,8 @@
 # current_items (W6)
 <p><b>Jelaskan perbedaan antara <i>asynchronous programming</i> dengan <i>synchronous programming</i>.</b><br>
- <i>Asynchronous programming</i> adalah programming dimana suatu program tidak harus menunggu satu proses selesai untuk memulai proses lain. Sebaliknya, di <i>synchronous programming</i> ada suatu urutan yang harus diikuti dimana proses baru tidka bisa dimulai sebelum proses sebelumnya selesai.</p>
+ <i>Asynchronous programming</i> adalah programming dimana suatu program tidak harus menunggu satu proses selesai untuk memulai proses lain. Sebaliknya, di <i>synchronous programming</i> ada suatu urutan yang harus diikuti dimana proses baru tidka bisa dimulai sebelum proses sebelumnya selesai. Dengan kata lain, asynchronous menggunakan multithreading, sedangkan synchronous menggunakan singlethreading. Ini membuat asynchronous memiliki throughput yang lebih tinggi karena lebih banyak dari satu proses dapat berjalan dalam waktu yang sama.</p>
 <p><b>Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma <i>event-driven programming</i>. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.</b><br>
-Paradigma <i>event-driven programming</i> adalah</p>
+Paradigma <i>event-driven programming</i> adalah paradigma dimana jalannya program dependen terhadap event seperti</p>
 <p><b>Jelaskan penerapan <i>asynchronous programming</i> pada AJAX.</b><br>
 </p>
 <p><b>Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.</b><br>
