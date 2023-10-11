@@ -6,7 +6,7 @@ Paradigma <i>event-driven programming</i> adalah paradigma dimana jalannya progr
 <p><b>Jelaskan penerapan <i>asynchronous programming</i> pada AJAX.</b><br>
 AJAX jenis asynchronous (Asynchronuos AJAX) membuat page tidak usah refresh untuk setiap kali menjalankan proses. Setelah terjadi suatu event yang mentrigger handler,  Javascript akan membuat XMLHttpRequest (XHR) dan object XHR akan mengirim request HTML, yang nanti akan diproses oleh server dan dikembalikan ke browser. Response yang didapat dari server diproses dengan Javascript dan proses dieksekusi tanpa memerlukan refresh/load ulang halaman.</p>
 <p><b>Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.</b><br>
-</p>
+Fetch API menggunakan <i>Promises</i> yang hanya akan reject dalam kondisi masalah network atau ada hal yang mencegah request itu selesai. Fetch API lebih baru dibandingkan jQuery, dan memiliki syntax yang lebih readable dibandingkan jQuery. Selain itu, jQuery juga memerlukan adanya file javascript jQuery yang dapat mengambil tempat, dimana Fetch API tidak mengambil tempat yang sebanding. Secara umum, Fetch API lebih modern, lebih mudah dibaca, dan memiliki performance yang lebih baik. </p>
 <p><b>Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).</b><br></p>
 
 # current_items (W5)
