@@ -1,4 +1,4 @@
-jeslyn-theodora-tugas
+jeslyn-theodora-tugas<br>
 edit: startapp dilakukan dengan nama current_inventory, jadi namanya saya kembalikan menjadi itu.
 # (W6)
 <p><b>Jelaskan perbedaan antara <i>asynchronous programming</i> dengan <i>synchronous programming</i>.</b><br>
