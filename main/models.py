@@ -7,5 +7,3 @@ class Item(models.Model):
     type = models.CharField(max_length=255)
     description = models.TextField()
     amount = models.IntegerField()
-    
-    

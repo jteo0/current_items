@@ -15,41 +15,7 @@
     position:fixed; left:23%; right:auto; top: 57%; bottom: auto;">{{class}}</p>
     
         {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-        <div id="accordion-container">
-        {% for item in items %}
-            <button class="accordion-header">{{item.name}}</button>
-                <div class="panel">
-                    <p><b>Type: {{item.type}}</b></p><p>{{item.description}}</p><p>Amount: {{item.amount}}<p>
-                        <a href="{% url 'main:edit_item' item.pk %}">
-                            <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
-                                Edit
-                            </button>
-                        </a>
-                        <a href="{% url 'main:delete_item' item.pk %}">
-                            <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
-                                Delete
-                            </button>
-                        </a>
-                    
-                    </div>
-                    <script>
-                    const accordianContainer = document.getElementById('accordion-container');
-                    accordianContainer.addEventListener("click", function(event) {
-                        const target = event.target;
-                        if (target && target.classList.contains('accordion-header')) {
-                            const panel = target.nextElementSibling;
-                            target.classList.toggle("active");
-                            if (panel.style.maxHeight) {
-                              panel.style.maxHeight = null;
-                            } else {
-                              panel.style.maxHeight = panel.scrollHeight + "px";
-                            }
-                          }
-                        });
-                    </script>
-
-        {% endfor %}
-        </div>
+        <div id="accordion-container"></div>
     
     <br />
     
@@ -65,6 +31,138 @@
         </button>
     </a>
     
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px;position:fixed;left:5%; right:auto; top: auto; bottom: 6%;">Add Item by AJAX</button>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="type" class="col-form-label">Type:</label>
+                            <input type="text" class="form-control" id="type" name="type"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" onclick="addItem()" class="btn btn-primary" id="button_add" data-bs-dismiss="modal">Add Item</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h5 style="color:#F5F5F5;font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:20px;position:fixed;left:0%; right:auto; top: auto; bottom: 0%;">Sesi terakhir login: {{ last_login }}</h5>
 
+    <script>
+        async function getItems() {
+            return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+        }
+        async function refreshItems() {
+            document.getElementById("accordion-container").innerHTML = ""
+            const items = await getItems()
+            let htmlString = ''
+            items.forEach((item) => {
+                htmlString += `
+                        <button class="accordion-header">${item.fields.name}</button>
+                        <div class="panel">
+                            <p><b>Type: ${item.fields.type}</b></p>
+                            <p>${item.fields.description}</p>
+                            <p>Amount: ${item.fields.amount}</p>
+                        </div>
+                    `;
+            });
+            document.getElementById("accordion-container").innerHTML = htmlString
+        }
+        refreshItems()
+
+        function addItem() {
+            fetch("{% url 'main:add_item_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshItems)
+    
+            document.getElementById("form").reset()
+            return false
+        }
+
+        const accordianContainer = document.getElementById('accordion-container');
+        accordianContainer.addEventListener("click", function(event) {
+            const target = event.target;
+            if (target && target.classList.contains('accordion-header')) {
+                const panel = target.nextElementSibling;
+                target.classList.toggle("active");
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+              }
+            });
+
+        document.getElementById("button_add").onclick = addItem
+    </script>
 {% endblock content %}
+
+<!-- {% for item in items %}
+<button class="accordion-header">{{item.name}}</button>
+    <div class="panel">
+        <p><b>Type: {{item.type}}</b></p><p>{{item.description}}</p><p>Amount: {{item.amount}}<p>
+            <a href="{% url 'main:edit_item' item.pk %}">
+                <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
+                    Edit
+                </button>
+            </a>
+            <a href="{% url 'main:delete_item' item.pk %}">
+                <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
+                    Delete
+                </button>
+            </a>
+        
+        </div>
+        <script>
+        const accordianContainer = document.getElementById('accordion-container');
+        accordianContainer.addEventListener("click", function(event) {
+            const target = event.target;
+            if (target && target.classList.contains('accordion-header')) {
+                const panel = target.nextElementSibling;
+                target.classList.toggle("active");
+                if (panel.style.maxHeight) {
+                  panel.style.maxHeight = null;
+                } else {
+                  panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+              }
+            });
+        </script>
+
+{% endfor %} 
+
+                            <a href="{% url 'main:edit_item' item.pk %}">
+                                <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
+                                    Edit
+                                </button>
+                            </a>
+                            <a href="{% url 'main:delete_item' item.pk %}">
+                                <button style="font-family:'Copperplate','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:15px;margin:5px;">
+                                    Delete
+                                </button>
+                            </a>
+                        -->
