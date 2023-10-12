@@ -1,6 +1,5 @@
 jeslyn-theodora-tugas<br>
-edit: startapp dilakukan dengan nama current_inventory, jadi namanya saya kembalikan menjadi itu.
-# (W6)
+# current_items (W6)
 <p><b>Jelaskan perbedaan antara <i>asynchronous programming</i> dengan <i>synchronous programming</i>.</b><br>
  <i>Asynchronous programming</i> adalah programming dimana suatu program tidak harus menunggu satu proses selesai untuk memulai proses lain. Sebaliknya, di <i>synchronous programming</i> ada suatu urutan yang harus diikuti dimana proses baru tidak bisa dimulai sebelum proses sebelumnya selesai. Dengan kata lain, asynchronous menggunakan multithreading, sedangkan synchronous menggunakan singlethreading. Ini membuat asynchronous memiliki throughput yang lebih tinggi karena lebih banyak dari satu proses dapat berjalan dalam waktu yang sama. Dalam konteks web programming, <i>synchronous programming</i> memerlukan halaman di refresh untuk menunjukkan perubahan, sedangkan <i>asynchronous programming</i> hanya sebagian/beberapa elemen.</p>
 <p><b>Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma <i>event-driven programming</i>. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.</b><br>
