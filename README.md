@@ -9,11 +9,11 @@ AJAX jenis asynchronous (Asynchronuos AJAX) membuat page tidak usah refresh untu
 Fetch API menggunakan <i>Promises</i> yang hanya akan reject dalam kondisi masalah network atau ada hal yang mencegah request itu selesai. Fetch API lebih baru dibandingkan jQuery, dan memiliki syntax yang lebih readable dibandingkan jQuery. Selain itu, jQuery juga memerlukan adanya file javascript jQuery yang dapat mengambil tempat, dimana Fetch API tidak mengambil tempat yang sebanding. Secara umum, Fetch API lebih modern, lebih mudah dibaca, dan memiliki performance yang lebih baik. </p>
 <p><b>Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).</b><br>
 1. AJAX GET<br>
-</p>
+Pada berkas main.html, bagian script dipindahkan kebawah dan ditambahkan fungsi getItems yang menggunakan get_item_json untuk mendapatkan data item yang sudah dibuat, fungsi addItem yang menggunakan add_item_ajax untuk menambahkan data item. Juga fungsi refreshItems yang digunakan untuk mengupdate list item tanpa refresh halaman dibuat dengan menghapus isi dari div yang sebelumnya ditaruh accordian, dan isi itu dipindahkan kedalam refreshItems.</p>
 <p>2. AJAX POST<br>
-</p>
+Saya membuat fungsi get_item_ajax dan add_item_ajax untuk mengembalikan data dengan JSON dan menambahkan item dengan AJAX, dan menambahkan keduanya ke urls.py. Setelah itu, di main.html saya membuat suatu button yang memunculkan form untuk membuat item baru, dan juga refresh list item tanpa harus reload halaman.</p>
 <p>3. Melakukan perintah <code>collectstatic</code>.<br>
-</p>
+Saya buka settings.py dan menambahkan <code>STATIC_ROOT = BASE_DIR/ 'static'</code>. Setelah itu, saya membuat folder static pada root direktori dan menjalankan <code>python manage.py collectstatic</code>.</p>
 
 # current_items (W5)
 <p><b>Jelaskan manfaat dari setiap <i>element selector</i> dan kapan waktu yang tepat untuk menggunakannya.</b><br>
